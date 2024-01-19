@@ -1,38 +1,63 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background-container {
+  background-image: url('/public/cinema.jpg'); /* Adjust the path as necessary */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.content-container {
+  /* Add styles if needed, e.g., for padding or to position content */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.search-container {
+  background-color: #f2f2f2; /* Your desired background color */
+  border-radius: 15px; /* Adjust for rounded corners */
+  padding: 20px; /* Space inside the container */
+  text-align: center; /* Center the content */
+  width: 40%; /* Adjust the width as needed */
+  margin: 50px auto; /* Center the container and add top margin */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+}
+
+.search-container h1 {
+  color: crimson;
+  font-size: 50px;
+  text-shadow: 0 0 10px #DC143C, /* Crimson glow */
+               0 0 20px #DC143C, /* More blur for a larger glow */
+               0 0 30px #DC143C; /* Even more blur for an even larger glow */
+}
+
+.search-container input[type="text"] {
+  width: 300px; /* Adjust as needed */
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #6bf;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.search-container button:hover {
+  background-color: #5aa;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Remove any unused styles related to .App-logo, .App-header, etc., if they are not used */
+
