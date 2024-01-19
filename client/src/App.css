@@ -7,35 +7,76 @@
 .App {
   text-align: center;
 }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3C2F2F; /* Example color */
+  color: #DAA520;
+  padding: 10px 20px;
+}
+
+.logo {
+  background-image: url('../public/logo.png');
+  height: 50px; /* Adjust as needed */
+  width: 50px; /* Adjust as needed */
+  background-size: cover; /* Or 'contain' based on your requirement */
+  background-position: center;
+  border-radius: 40%; /* This will make the div rounded */
+}
+
+.logo img {
+  height: 50px; /* Adjust the size as needed */
+  width: auto; /* Maintains the aspect ratio */
+  /* Add more styling as needed */
+}
+
+.navbar a {
+  color: #DAA520;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  color: #C08081; /* Highlight color on hover */
+}
 
 .background-container {
-  background-image: url('/public/cinema.jpg'); /* Adjust the path as necessary */
+  background-image: url('/public/movie.WEBP'); /* Adjust the path as necessary */
   background-size: cover;
   background-position: center;
   height: 100vh;
   width: 100%;
+  position: relative;
 }
 
 .content-container {
-  /* Add styles if needed, e.g., for padding or to position content */
+  position: absolute; /* Absolute position within background-container */
+  top: 50%; /* Adjust as needed, 50% will place it in the middle */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center it */
+  width: 80%; /* Adjust width as needed */
 }
 
 .search-container {
-  background-color: #f2f2f2; /* Your desired background color */
-  border-radius: 15px; /* Adjust for rounded corners */
-  padding: 20px; /* Space inside the container */
-  text-align: center; /* Center the content */
-  width: 40%; /* Adjust the width as needed */
-  margin: 50px auto; /* Center the container and add top margin */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+  background-color: #3C2F2F; /* Your desired background color */
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Add more styles as needed */
+  width: 60%;
 }
 
+
 .search-container h1 {
-  color: crimson;
+  color: #DAA520;
   font-size: 50px;
-  text-shadow: 0 0 10px #DC143C, /* Crimson glow */
-               0 0 20px #DC143C, /* More blur for a larger glow */
-               0 0 30px #DC143C; /* Even more blur for an even larger glow */
+  text-shadow: 0 0 10px #DAA520, /* Crimson glow */
+               0 0 0px #DAA520, /* More blur for a larger glow */
+               0 0 0px #DAA520; /* Even more blur for an even larger glow */
 }
 
 .search-container input[type="text"] {
@@ -43,14 +84,14 @@
   padding: 10px;
   margin-right: 10px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid #36454F;
 }
 
 .search-container button {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
-  background-color: #6bf;
+  background-color: #C08081;
   color: white;
   cursor: pointer;
 }
