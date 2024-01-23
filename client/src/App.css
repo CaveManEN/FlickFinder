@@ -96,10 +96,46 @@
   border-radius: 15px;
   padding: 20px;
   text-align: center;
-  margin: 0 auto;
+  margin: 25px auto;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   /* Add more styles as needed */
   width: 60%;
+}
+
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.result-card {
+  display: flex;
+  width: 20%;
+  height: 200px;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 12px;
+  background-color: #453838;
+}
+
+.result-card:hover {
+  box-shadow: -1px 0 50px #DAA520;
+  opacity: 100;
+  cursor: pointer;
+  transform: translateY(-5px);
+  transition: .5s ease-in-out;
+  border: 2px solid #DAA520
+}
+
+.card-img {
+  margin: auto 5px;
+  border-radius: 10px;
+}
+
+.card-text {
+  font-size: 15px;
+  color: #DAA520;
+  margin: auto 2px;
 }
 
 
@@ -132,5 +168,4 @@
 .search-container button:hover {
   background-color: #5aa;
 }
-
 

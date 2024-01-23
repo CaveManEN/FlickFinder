@@ -1,14 +1,13 @@
-
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
-import Navbar from './components/Navbar';
 import Register from './pages/Register';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
+    <>
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -16,9 +15,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         {/* Other routes */}
       </Routes>
-    </Router>
+    </>
   );
 }
 
 export default App;
-
