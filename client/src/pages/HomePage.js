@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 
+import { Link } from 'react-router-dom';
+import '../App.css';
+
 function HomePage() {
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -16,15 +19,7 @@ function HomePage() {
 
     return (
         <>
-            <header className="header">
-                <div className="logo">
-                </div>
-                <nav className="navbar">
-                    <a href="/movies">View Movies</a>
-                    <a href="/login">Login</a>
-                    
-                </nav>
-            </header>
+        
             <div className="background-container">
                 <div className="content-container">
                     <div className="search-container">

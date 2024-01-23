@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* Your CSS styles */
+
 * {
   margin: 0;
   padding: 0;
@@ -17,25 +22,52 @@
 }
 
 .logo {
-  background-image: url('../public/logo.png');
-  height: 50px; /* Adjust as needed */
-  width: 50px; /* Adjust as needed */
-  background-size: cover; /* Or 'contain' based on your requirement */
-  background-position: center;
-  border-radius: 40%; /* This will make the div rounded */
+  border-radius: 50%; /* Make the div rounded */
+  overflow: hidden; /* This ensures that the image does not overflow the rounded div */
 }
 
 .logo img {
-  height: 50px; /* Adjust the size as needed */
-  width: auto; /* Maintains the aspect ratio */
-  /* Add more styling as needed */
+  width: 100%; /* Ensure the image fills the div */
+  height: auto; /* Maintain aspect ratio */
 }
+
 
 .navbar a {
   color: #DAA520;
   text-decoration: none;
   margin-left: 20px;
   font-size: 18px;
+  font-family: 'Lobster', cursive; /* Add this line */
+}
+/* App.css */
+/* Styles specific to the navbar */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  background-color: #3C2F2F;
+  color: #DAA520;
+  
+}
+
+
+
+.navbar-links {
+  display: flex;
+  justify-content: flex-end; /* Aligns items to the right */
+  margin-left: 80%;
+  
+
+}
+
+.logo {
+  background-image: url('../public/logo.png');
+  height: 50px; /* Adjust as needed */
+  width: 50px; /* Adjust as needed */
+  background-size: cover; /* Or 'contain' based on your requirement */
+  background-position: center;
+  border-radius: 40%; /* This will make the div rounded */
 }
 
 .navbar a:hover {
@@ -71,13 +103,14 @@
 }
 
 
-.search-container h1 {
-  color: #DAA520;
-  font-size: 50px;
-  text-shadow: 0 0 10px #DAA520, /* Crimson glow */
-               0 0 0px #DAA520, /* More blur for a larger glow */
-               0 0 0px #DAA520; /* Even more blur for an even larger glow */
-}
+
+  .search-container h1 {
+    font-family: 'Lobster', cursive; /* Add this line */
+    color: #DAA520;
+    font-size: 50px;
+    text-shadow: 0 0 5px #DAA520;
+  }
+  
 
 .search-container input[type="text"] {
   width: 300px; /* Adjust as needed */
@@ -100,5 +133,4 @@
   background-color: #5aa;
 }
 
-/* Remove any unused styles related to .App-logo, .App-header, etc., if they are not used */
 
