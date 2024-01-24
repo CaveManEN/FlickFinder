@@ -12,6 +12,7 @@
 .App {
   text-align: center;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -31,7 +32,6 @@
   height: auto; /* Maintain aspect ratio */
 }
 
-
 .navbar a {
   color: #DAA520;
   text-decoration: none;
@@ -39,26 +39,23 @@
   font-size: 18px;
   font-family: 'Lobster', cursive; /* Add this line */
 }
+
 /* App.css */
 /* Styles specific to the navbar */
+
 .navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 10px;
   background-color: #3C2F2F;
-  color: #DAA520;
-  
+  color: #DAA520; 
 }
-
-
 
 .navbar-links {
   display: flex;
   justify-content: flex-end; /* Aligns items to the right */
   margin-left: 80%;
-  
-
 }
 
 .logo {
@@ -75,7 +72,7 @@
 }
 
 .background-container {
-  background-image: url('/public/movie.WEBP'); /* Adjust the path as necessary */
+  background-image: url('../public/movie.WEBP'); /* Adjust the path as necessary */
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -138,15 +135,12 @@
   margin: auto 2px;
 }
 
-
-
-  .search-container h1 {
-    font-family: 'Lobster', cursive; /* Add this line */
-    color: #DAA520;
-    font-size: 50px;
-    text-shadow: 0 0 5px #DAA520;
-  }
-  
+.search-container h1 {
+  font-family: 'Lobster', cursive; /* Add this line */
+  color: #DAA520;
+  font-size: 50px;
+  text-shadow: 0 0 5px #DAA520;
+}
 
 .search-container input[type="text"] {
   width: 300px; /* Adjust as needed */
@@ -169,3 +163,38 @@
   background-color: #5aa;
 }
 
+.error-page {
+  display: flex;
+  align-items: center;
+  background-color: #453838;
+  background-image: url('../public/error.png'); /* Update the path as per your file location */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.oops {
+  font-family: 'Lobster', cursive; /* Add this line */
+  color: #DAA520;
+  font-size: 50px;
+  text-shadow: 0 0 5px #DAA520;
+}
+
+.sorry {
+  font-size: 15px;
+  color: #DAA520;
+  margin: auto 2px;
+}
+
+.error {
+  display: flex;
+  width: 20%;
+  height: 200px;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 12px;
+  background-color: #DAA520;
+}
