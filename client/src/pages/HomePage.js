@@ -1,45 +1,23 @@
 import React, { useState } from 'react';
-
-import { Link } from 'react-router-dom';
+import SearchBar from '../components/SearchBar';
+import Results from '../components/Results'; // Import the Results component
 import '../App.css';
 
 function HomePage() {
-    const [searchTerm, setSearchTerm] = useState('');
-
-    const handleSearchChange = (e) => {
-        setSearchTerm(e.target.value);
-    };
-
-    const handleSearchSubmit = (e) => {
-        e.preventDefault();
-        // Implement your search logic or redirection here
-        console.log(`Searching for: ${searchTerm}`);
-    };
-
+    const [searchResults, setSearchResults] = useState([]); // State to hold search results
 
     return (
         <>
-        
             <div className="background-container">
                 <div className="content-container">
-                    <div className="search-container">
-                        <h1>Welcome to Flick Finder</h1>
-                        <form onSubmit={handleSearchSubmit}>
-                            <input
-                                type="text"
-                                placeholder="Search for movies or TV shows"
-                                value={searchTerm}
-                                onChange={handleSearchChange}
-                            />
-                            <button type="submit">Search</button>
-                        </form>
-                    </div>
+                    <SearchBar setSearchResults={setSearchResults} /> {/* Pass setSearchResults to SearchBar */}
+                    <Results data={searchResults} /> {/* Display search results */}
                 </div>
             </div>
         </>
     );
-    
-
 }
 
 export default HomePage;
+
+
