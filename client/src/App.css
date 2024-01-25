@@ -46,7 +46,7 @@
   background-image: url('/public/movie.WEBP'); /* Adjust the path as necessary */
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: auto;
   width: 100%;
   position: relative;
   display: flex;
@@ -81,6 +81,7 @@
 
 .current-movie-card {
   margin: 0 auto;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   border: 2px solid black;
