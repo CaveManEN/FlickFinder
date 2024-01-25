@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import AppContext from '../utils/AppContext';
 // import useNavigate to change URL path after API fetch
 import { useNavigate } from 'react-router-dom';
-import Results from '../components/Results';
+// import Results from '../components/Results';
 
 // SearchBar component
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
-    const [data, setData] = useState([]);
+    const {setData} = useContext(AppContext);
 
     // store useNavigate function in a const to use later to change the URL path after API fetch
     const navigate = useNavigate();
@@ -53,8 +54,7 @@ const SearchBar = () => {
                         <button type="submit">Search</button>
                     </form>
                 </div>
-                {/* Pass data to Results component using props */}
-                <Results data={data} />
+                {/* <Results /> */}
             </div>
         </>
     );

@@ -35,10 +35,20 @@ app.get('/', (req, res) => {
 app.get('/results/:searchTerm', async (req, res) => {
   // access query variable from the req.params searchTerm from the client side
   // access API Key from the .env file
-  const response = await fetch(`https://imdb-com.p.rapidapi.com/auto-complete?q=${req.params.searchTerm}&rapidapi-key=${process.env.API_KEY}`);
+  // const response = await fetch(`https://imdb-com.p.rapidapi.com/auto-complete?q=${req.params.searchTerm}&rapidapi-key=${process.env.API_KEY}`);
+  const response = await fetch(`https://imdb146.p.rapidapi.com/v1/find/?query=${req.params.searchTerm}&rapidapi-key=${process.env.API_KEY}`)
   const jsonData = await response.json(); // store parsed json data
-  res.json(jsonData.data.d) // respond with the data array of objects of movies in json
-  console.log(jsonData.data.d);
+  // res.json(jsonData.data.d) // respond with the data array of objects of movies in json
+  res.json(jsonData.titleResults.results)
+  console.log(jsonData.titleResults.results);
+})
+
+app.get('/results/movie/:movieId', async (req, res) => {
+  // const response = await fetch(`https://imdb-com.p.rapidapi.com/title/details?tconst=${req.params.movieId}&rapidapi-key=${process.env.API_KEY}`);
+  const response = await fetch(`https://imdb146.p.rapidapi.com/v1/title/?id=${req.params.movieId}&rapidapi-key=${process.env.API_KEY}`)
+  const jsonData = await response.json();
+  res.json(jsonData);
+  console.log('server data: ', jsonData);
 })
 
 // Start server
