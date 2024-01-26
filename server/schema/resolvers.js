@@ -8,20 +8,23 @@ const resolvers = {
     // Queries
     Query: {
         // A query to get all users.
-        users: async () => {
-            return User.find().populate('movies');
-        },
-        // Query to get a specific user
-        user: async (parents, { username }) => {
-            return User.findOne({ username }).populate('movies');
-        }
-    },
+        users: async (parent, args, context) => {
+            if (context.user) {
+                const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
+        
+                return userData;
+              }
+        
+              throw AuthenticationError;
+            },
+          },
+    
 
     // Mutations
     Mutation: {
         // mutation to add a user
         addUser: async (parent, args) => {
-            const user = await User.create(args);
+            const addUser = await User.create(args);
 
             //assign JWT token to user created
             const token = signToken(user);
