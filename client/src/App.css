@@ -98,6 +98,7 @@
   justify-content: space-between;
 }
 
+<<<<<<< HEAD
 .current-movie-card {
   margin: 0 auto;
   margin-bottom: 20px;
@@ -134,12 +135,20 @@
 .result-card {
   display: flex;
   width: 15%;
+=======
+.result-card {
+  display: flex;
+  width: 20%;
+>>>>>>> main
   height: 200px;
   margin: 20px;
   border-radius: 20px;
   padding: 12px;
   background-color: #453838;
+<<<<<<< HEAD
   text-decoration: none;
+=======
+>>>>>>> main
 }
 
 .result-card:hover {
@@ -227,4 +236,43 @@
   background-color: #DAA520;
 }
 
+<<<<<<< HEAD
+.error-page {
+  display: flex;
+  align-items: center;
+  background-color: #453838;
+  background-image: url('../public/error.png'); /* Update the path as per your file location */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.oops {
+  font-family: 'Lobster', cursive; /* Add this line */
+  color: #DAA520;
+  font-size: 50px;
+  text-shadow: 0 0 5px #DAA520;
+}
+
+.sorry {
+  font-size: 15px;
+  color: #DAA520;
+  margin: auto 2px;
+}
+
+.error {
+  display: flex;
+  width: 20%;
+  height: 200px;
+  margin: 20px;
+  border-radius: 20px;
+  padding: 12px;
+  background-color: #DAA520;
+}
+
+=======
+>>>>>>> main
 /* Remove any unused styles related to .App-logo, .App-header, etc., if they are not used */
