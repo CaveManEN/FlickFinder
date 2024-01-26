@@ -98,7 +98,6 @@
   justify-content: space-between;
 }
 
-<<<<<<< HEAD
 .current-movie-card {
   margin: 0 auto;
   margin-bottom: 20px;
@@ -135,20 +134,12 @@
 .result-card {
   display: flex;
   width: 15%;
-=======
-.result-card {
-  display: flex;
-  width: 20%;
->>>>>>> main
   height: 200px;
   margin: 20px;
   border-radius: 20px;
   padding: 12px;
   background-color: #453838;
-<<<<<<< HEAD
   text-decoration: none;
-=======
->>>>>>> main
 }
 
 .result-card:hover {
@@ -236,7 +227,6 @@
   background-color: #DAA520;
 }
 
-<<<<<<< HEAD
 .error-page {
   display: flex;
   align-items: center;
@@ -273,6 +263,4 @@
   background-color: #DAA520;
 }
 
-=======
->>>>>>> main
 /* Remove any unused styles related to .App-logo, .App-header, etc., if they are not used */
