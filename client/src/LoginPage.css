@@ -1,0 +1,153 @@
+/* LoginPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.login-container {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 13%;
+    padding: 20px;
+    background-color: #3C2F2F;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #DAA520; /* Text color similar to homepage */
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: x-large;
+  }
+  
+  .login-title {
+    color: #DAA520; /* Title color similar to homepage */
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #DAA520;
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .login-form input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #36454F;
+    background-color: #f3f3f3;
+  }
+  
+  .login-form button {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #C08081;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: #DAA520;
+  }
+  .create-account-link {
+    margin-top: 20px; /* Adjust spacing as needed */
+    font-size: 16px; /* Adjust font size as needed */
+    color: #DAA520; /* Or any color that fits your design */
+}
+
+.create-account-link a {
+    color: #C08081; /* Link color */
+    text-decoration: none; /* Removes underline from links */
+}
+
+.create-account-link a:hover {
+    text-decoration: underline; /* Adds underline on hover for better UX */
+}
+
+  
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  body {
+    
+    background-image: url('../public/login.png'); /* Update the path as per your file location */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+   /* RegisterPage.css */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.register-container {
+    max-width: 400px;
+    margin: auto;
+    margin-top: 13%;
+    padding: 20px;
+    background-color: #3C2F2F;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #DAA520;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-size: x-large;
+}
+
+.register-title {
+    color: #DAA520;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #DAA520;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-form input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #36454F;
+    background-color: #f3f3f3;
+}
+
+.register-form button {
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #C08081;
+    color: white;
+    cursor: pointer;
+}
+
+.register-form button:hover {
+    background-color: #DAA520;
+}
+
+.account-link {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #DAA520;
+}
+
+.account-link a {
+    color: #C08081;
+    text-decoration: none;
+}
+
+.account-link a:hover {
+    text-decoration: underline;
+}
+
+  /* Responsive design */
+  @media (max-width: 600px) {
+    .login-container {
+      width: 90%;
+      margin: 20px auto;
+    }
+  }
+  

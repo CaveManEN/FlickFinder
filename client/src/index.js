@@ -9,6 +9,7 @@ import Error from './pages/Error';
 import Results from './components/Results';
 import HomePage from './pages/HomePage';
 import CurrentMovie from './components/CurrentMovie'
+import LoginPage from './pages/LoginPage';
 import reportWebVitals from './reportWebVitals';
 
 // store routes in router const
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/results/:id',
         element: <CurrentMovie />
+      },
+      {
+        path: '/login',
+        element: <LoginPage />
       }
     ]
   }
