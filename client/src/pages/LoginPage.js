@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
 import '../LoginPage.css';
-
+import { useMutation } from '@apollo/client';
+import { LOGIN } from '../utils/mutations';
 
 function LoginPage() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+     const [email, setEmail] = useState('');
+     const [password, setPassword] = useState('');
+    const [login, { error }] = useMutation(LOGIN);
 
-    const handleSubmit = (e) => {
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         // Handle login logic here
-        console.log(username, password); // For demonstration purposes
+        console.log(email, password); // For demonstration purposes
+        try {
+            const mutationResponse = await login({
+              variables: { email: email, password: password },
+            });
+            const token = mutationResponse.data.login.token;
+            // Auth.login(token);
+          } catch (e) {
+            console.log(e);
+           }
     };
 
     return (
@@ -17,12 +29,12 @@ function LoginPage() {
             <h2 className="login-title">Login</h2>
             <form onSubmit={handleSubmit} className="login-form">
                 <div className="form-group">
-                    <label htmlFor="username">Username:</label>
+                    <label htmlFor="username">Email:</label>
                     <input
-                        id="username"
+                        id="email"
                         type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </div>
                 <div className="form-group">
@@ -40,7 +52,9 @@ function LoginPage() {
                 Don’t have an account? <a href="/register">Create one here</a>
                 
             </p>
-        </div>
+  
+        </div> 
+      
     );
 }
 
