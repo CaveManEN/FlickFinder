@@ -7,6 +7,7 @@ import './App.css';
 import App from './App';
 import Error from './pages/Error';
 import Results from './components/Results';
+import Register from './pages/Register';
 import HomePage from './pages/HomePage';
 import CurrentMovie from './components/CurrentMovie'
 import LoginPage from './pages/LoginPage';
@@ -24,6 +25,14 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
+        path: '/login',
+        element: <LoginPage />
+      },
+      {
+        path: '/register',
+        element: <Register />
+      },
+      {
         path: '/results',
         element: <Results />
       },
@@ -31,10 +40,6 @@ const router = createBrowserRouter([
         path: '/results/:id',
         element: <CurrentMovie />
       },
-      {
-        path: '/login',
-        element: <LoginPage />
-      }
     ]
   }
 ])

@@ -15,6 +15,7 @@ const ResultCard = ({imgPlaceHolder, result}) => {
     const handleClick = async (e) => {
         movieId = e.currentTarget.getAttribute('data-id')
         console.log('Movie id: ', movieId);
+        // using await makes sure the data is fetched and global state us updating before navigating to the /results/${result.id} end point
         await fetchData();
         navigate(`/results/${result.id}`)
     }
@@ -26,21 +27,12 @@ const ResultCard = ({imgPlaceHolder, result}) => {
 
             // update currentMovie
             setData(jsonData);
-            // navigate(`/results/`)
         } catch (error) {
             console.log('Error fetching data:', error);
         }
     }
 
     const card = result.titlePosterImageModel ? (
-
-        // <div key={result.id} className='result-card'>
-            // <Link 
-            //     to={`/results/${result.id}`}
-            //     key={result.id} className='result-card'
-            //     onClick={handleClick}
-            //     data-id={result.id}
-        // >
         <div
             key={result.id} className='result-card'
             onClick={handleClick}
@@ -59,7 +51,6 @@ const ResultCard = ({imgPlaceHolder, result}) => {
                 <p>{result.titleReleaseText}</p>
             </div>
         </div>
-        // </div>
 
     ) : (
 
