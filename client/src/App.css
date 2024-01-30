@@ -55,7 +55,6 @@
   flex-direction: column;
 }
 
-
 .content-container {
   position: absolute; /* Absolute position within background-container */
   top: 50%; /* Adjust as needed, 50% will place it in the middle */
@@ -156,7 +155,6 @@
   margin: auto 2px;
 }
 
-
 .search-container h1 {
   font-family: 'Lobster', cursive; /* Add this line */
   color: #DAA520;
@@ -185,7 +183,7 @@
   background-color: #5aa;
 }
 
-.error-page {
+#error-page {
   display: flex;
   align-items: center;
   background-color: #453838;
@@ -198,27 +196,46 @@
   position: relative;
 }
 
-.oops {
+#oops {
   font-family: 'Lobster', cursive; /* Add this line */
   color: #DAA520;
-  font-size: 50px;
-  text-shadow: 0 0 5px #DAA520;
+  font-size: 175px;
+  text-shadow:
+  0 0 7px #65350f,
+  0 0 10px #65350f,
+  0 0 21px #65350f,
+  0 0 42px #65350f,
+  0 0 82px #65350f,
+  0 0 92px #65350f,
+  0 0 102px #65350f,
+  0 0 151px #65350f;
+  position: absolute; /* or position: fixed; */
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.sorry {
-  font-size: 15px;
+#sorry {
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
   color: #DAA520;
   margin: auto 2px;
+  position: absolute; /* or position: fixed; */
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-text-stroke: 0.75px #65350f;
 }
 
-.error {
-  display: flex;
-  width: 20%;
-  height: 200px;
-  margin: 20px;
-  border-radius: 20px;
-  padding: 12px;
-  background-color: #DAA520;
+#error {
+  font-family: 'Lobster', cursive;
+  font-size: 25px;
+  color: #65350f;
+  margin: auto 2px;
+  position: absolute; /* or position: fixed; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 @keyframes elasticPopUp {
