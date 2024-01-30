@@ -2,11 +2,16 @@
 require('dotenv').config()
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3001;
+// const PORT = process.env.PORT || 3001;
 // store cors in a const to use as middleware in our app
 const cors = require('cors');
-// const { authMiddleware } = require('./utils/auth');
+const { authMiddleware } = require('./utils/auth');
 const fetch = require('node-fetch');
+
+//imports for graphql
+const { ApolloServer } = require('@apollo/server');
+const { expressMiddleware } = require('@apollo/server/express4');
+const db = require('./config/connection');
 
 
 // Routes
@@ -35,20 +40,65 @@ app.get('/', (req, res) => {
 
 // Create route with a variable in the path
 app.get('/results/:searchTerm', async (req, res) => {
-  try {
-    const response = await fetch(`https://imdb-com.p.rapidapi.com/auto-complete?q=${req.params.searchTerm}&rapidapi-key=${process.env.API_KEY}`);
-    if (!response.ok) {
-      throw new Error(`Error from IMDb API: ${response.status} - ${response.statusText}`);
-    }
-    const jsonData = await response.json();
-    res.json(jsonData.data.d);
-  } catch (error) {
-    console.error('Error in /results route:', error.message);
-    res.status(500).send('Internal Server Error');
-  }
+  // access query variable from the req.params searchTerm from the client side
+  // access API Key from the .env file
+  // const response = await fetch(`https://imdb-com.p.rapidapi.com/auto-complete?q=${req.params.searchTerm}&rapidapi-key=${process.env.API_KEY}`);
+  const response = await fetch(`https://imdb146.p.rapidapi.com/v1/find/?query=${req.params.searchTerm}&rapidapi-key=${process.env.API_KEY}`)
+  const jsonData = await response.json(); // store parsed json data
+  // res.json(jsonData.data.d) // respond with the data array of objects of movies in json
+  res.json(jsonData.titleResults.results)
+  console.log(jsonData.titleResults.results);
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`)
+app.get('/results/movie/:movieId', async (req, res) => {
+  // const response = await fetch(`https://imdb-com.p.rapidapi.com/title/details?tconst=${req.params.movieId}&rapidapi-key=${process.env.API_KEY}`);
+  const response = await fetch(`https://imdb146.p.rapidapi.com/v1/title/?id=${req.params.movieId}&rapidapi-key=${process.env.API_KEY}`)
+  const jsonData = await response.json();
+  res.json(jsonData);
+  console.log('server data: ', jsonData);
 });
+
+
+// import our typeDefs and resolvers for graphql
+const { typeDefs, resolvers } = require('./schema');
+
+// bring in instance of server for graphql
+const PORT = process.env.PORT || 3001;
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+
+// Route for graphql
+const startApolloServer = async () => {
+  await server.start();
+
+  app.use(express.urlencoded({ extended: false }));
+  app.use(express.json());
+
+  app.use('/graphql', expressMiddleware(server, {
+    context: authMiddleware
+  }));
+
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/dist')));
+
+    app.get('*', (req, res) => {
+      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+    });
+  }
+
+  db.once('open', () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      console.log(`Use GraphQL at http://localhost:${PORT}/graphql`);
+    });
+  });
+};
+
+startApolloServer();
+
+// Start server
+// app.listen(PORT, () => {
+//     console.log(`Server is running on port ${PORT}`)
+// });
