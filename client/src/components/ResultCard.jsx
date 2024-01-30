@@ -34,7 +34,8 @@ const ResultCard = ({imgPlaceHolder, result}) => {
 
     const card = result.titlePosterImageModel ? (
         <div
-            key={result.id} className='result-card'
+            key={result.id} 
+            className='result-card elasticPopUpAnimation'
             onClick={handleClick}
             data-id={result.id}
         >
@@ -57,7 +58,8 @@ const ResultCard = ({imgPlaceHolder, result}) => {
         // <div key={data.id} className='result-card'>
             <Link
                 to={`/results/${result.id}`}
-                key={result.id} className='result-card'
+                key={result.id} 
+                className='result-card elasticPopUpAnimation'
                 onClick={handleClick}
                 data-id={result.id}
             >
@@ -70,7 +72,7 @@ const ResultCard = ({imgPlaceHolder, result}) => {
                 ></img>
                 <div className='card-text'>
                     <h3>{result.titleNameText}</h3>
-                    <div>{result.topCredits.map((actor, index) => <p key={index}>{actor}</p>)}</div>
+                    <div>{result.topCredits.map((actor) => <p>{actor}</p>)}</div>
                     <p>{result.titleReleaseText}</p>
                 </div>
             </Link>
@@ -83,3 +85,4 @@ const ResultCard = ({imgPlaceHolder, result}) => {
 }
 
 export default ResultCard;
+
