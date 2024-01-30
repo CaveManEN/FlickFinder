@@ -7,10 +7,10 @@ const ProfilePage = ({ username }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+        // Define fetchData inside useEffect
         const fetchData = async () => {
             try {
                 setIsLoading(true);
-                // Replace with the actual API endpoint for fetching user data
                 const response = await fetch(`http://localhost:3001/api/user/${username}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -23,8 +23,23 @@ const ProfilePage = ({ username }) => {
                 setIsLoading(false);
             }
         };
-        fetchData();
+
+        if (username) {
+            fetchData();
+        }
     }, [username]);
+
+    if (!username) {
+        return (
+            <div className="not-logged-in">
+                <div className="login-card">
+                    <h2>Please Log In</h2>
+                    <p>Access to this page is restricted. Please log in to view your profile.</p>
+                    <a href="/login">Log In</a> {/* Replace with your login route */}
+                </div>
+            </div>
+        );
+    }
 
     if (isLoading) {
         return <div>Loading...</div>;
@@ -42,7 +57,7 @@ const ProfilePage = ({ username }) => {
             <div className="profile-liked-movies">
                 <h2>Liked Movies:</h2>
                 <ul className="profile-movie-list">
-                    {userData.likedMovies.map(movie => (
+                    {userData.likedMovies?.map(movie => (
                         <li key={movie.id} className="movie-card">
                             <div className="movie-title">{movie.title}</div>
                             <div className="movie-info">More info...</div>

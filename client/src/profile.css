@@ -139,3 +139,47 @@
     font-size: 14px;
     /* Smaller font size for additional info */
 }
+.not-logged-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
+
+.login-card {
+    background-color: #453838; /* Matching background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    max-width: 400px; /* Maximum width of the card */
+    width: 100%; /* Full width */
+    color: #DAA520; /* Matching text color */
+}
+
+.login-card h2 {
+    margin-bottom: 15px; /* Spacing below the title */
+}
+
+.login-card p {
+    margin-bottom: 20px; /* Spacing below the paragraph */
+}
+
+.login-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #DAA520; /* Button color */
+    color: #453838;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-card a:hover {
+    background-color: #453838; /* Darker shade for hover effect */
+    color: #DAA520;
+}
+
