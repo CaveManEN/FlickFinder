@@ -11,7 +11,8 @@ const fetch = require('node-fetch');
 //imports for graphql
 const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
-const db = require('./config/connection');
+const db = require('./config/connection'); 
+
 
 const path = require('path');
 
