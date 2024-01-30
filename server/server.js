@@ -13,6 +13,8 @@ const { ApolloServer } = require('@apollo/server');
 const { expressMiddleware } = require('@apollo/server/express4');
 const db = require('./config/connection');
 
+const path = require('path');
+
 
 // Routes
 const indexRoute = require('./routes/index');
@@ -81,10 +83,10 @@ const startApolloServer = async () => {
   }));
 
   if (process.env.NODE_ENV === 'production') {
-    app.use(express.static(path.join(__dirname, '../client/dist')));
-
+    app.use(express.static(path.join(__dirname, '../client/build')));
+  
     app.get('*', (req, res) => {
-      res.sendFile(path.join(__dirname, '../client/dist/index.html'));
+      res.sendFile(path.join(__dirname, '../client/build/index.html'));
     });
   }
 
