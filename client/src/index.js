@@ -7,13 +7,16 @@ import './App.css';
 import App from './App';
 import Error from './pages/Error';
 import Results from './components/Results';
+import Register from './pages/Register';
 import HomePage from './pages/HomePage';
+import CurrentMovie from './components/CurrentMovie'
+import LoginPage from './pages/LoginPage';
 import reportWebVitals from './reportWebVitals';
 
 // store routes in router const
 const router = createBrowserRouter([
   {
-    path: '/*',
+    path: '/',
     element: <App />,
     errorElement: <Error />,
     children: [
@@ -22,13 +25,21 @@ const router = createBrowserRouter([
         element: <HomePage />,
       },
       {
-        path: 'results',
+        path: '/login',
+        element: <LoginPage />
+      },
+      {
+        path: '/register',
+        element: <Register />
+      },
+      {
+        path: '/results',
         element: <Results />
       },
-      // {
-      //   path: '/movie:movieId',
-      //   element: <Movie />
-      // }
+      {
+        path: '/results/:id',
+        element: <CurrentMovie />
+      },
     ]
   }
 ])
