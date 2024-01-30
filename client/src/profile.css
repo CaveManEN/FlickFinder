@@ -1,0 +1,185 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.profile-page {
+
+    height: 100vh;
+    /* Full view height */
+    background-image: url('../public/profile.png');
+    /* Update the path as per your file location */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    /* Stack children vertically */
+    align-items: center;
+    /* Center align children */
+    justify-content: center;
+    /* Center vertically in viewport */
+    padding: 20px;
+
+
+    /* Other styles */
+    color: #DAA520;
+    font-family: 'Lobster', cursive;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.profile-name-box {
+    padding: 10px 20px;
+    /* Padding around the text */
+    background-color: #453838;
+    /* Consistent with other elements */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Box shadow for depth */
+    display: inline-block;
+    /* To wrap the content snugly */
+    color: #DAA520;
+    /* Text color */
+    margin-bottom: 20px;
+    /* Space below the box */
+    text-align: center;
+    height: auto;
+    font-size: 24px;
+    /* Adjust the font size as needed */
+}
+
+
+.profile-header {
+    margin-bottom: 20px;
+}
+
+.profile-liked-movies {
+    width: 80%;
+    /* Adjust width as needed */
+    flex-grow: 1;
+    /* Allows the container to grow to fit content */
+    margin: 20px 0;
+    /* Add margin for spacing */
+
+    background-color: #3C2F2F;
+    /* Consistent with other containers */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 25px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    /* Consistent with search-container */
+}
+
+
+.profile-liked-movies h2 {
+    margin-bottom: 15px;
+}
+
+.profile-movie-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* Spreads the cards evenly */
+    padding: 0;
+    list-style: none;
+    max-height: 300px;
+    /* Set the maximum height as per your preference */
+    overflow-y: auto;
+    /* Add a scrollbar when content exceeds the maximum height */
+
+
+}
+
+.profile-movie-list li {
+    background-color: #453838;
+    /* Card background color */
+    margin: 10px;
+    /* Spacing between cards */
+    padding: 15px;
+    /* Padding inside cards */
+    border-radius: 10px;
+    /* Rounded corners for cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    /* Shadow for depth */
+    width: 200px;
+    /* Width of each card */
+    text-align: center;
+    /* Center text inside card */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    min-width: 200px;
+    /* Ensure cards have a minimum width */
+    max-width: calc(50% - 20px);
+    /* Adjust width for wrapping */
+    margin: 10px;
+    /* Adjust as needed */
+}
+
+.profile-movie-list li:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    transform: scale(1.05);
+    /* Slightly enlarge on hover */
+}
+
+.movie-title {
+    color: #DAA520;
+    /* Title color */
+    font-size: 18px;
+    /* Adjust the font size as needed */
+    margin-bottom: 5px;
+    /* Spacing below the title */
+}
+
+.movie-info {
+    color: #DAA520;
+    /* Info text color */
+    font-size: 14px;
+    /* Smaller font size for additional info */
+}
+.not-logged-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    
+    text-align: center;
+    font-family: 'Lobster', cursive;
+}
+
+.login-card {
+    background-color: #453838; /* Matching background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px; /* Padding inside the card */
+    max-width: 400px; /* Maximum width of the card */
+    width: 100%; /* Full width */
+    color: #DAA520; /* Matching text color */
+}
+
+.login-card h2 {
+    margin-bottom: 15px; /* Spacing below the title */
+}
+
+.login-card p {
+    margin-bottom: 20px; /* Spacing below the paragraph */
+}
+
+.login-card a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #DAA520; /* Button color */
+    color: #453838;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-card a:hover {
+    background-color: #453838; /* Darker shade for hover effect */
+    color: #DAA520;
+}
+
