@@ -1,16 +1,39 @@
+import { useMutation } from '@apollo/client';
 import React, { useState } from 'react';
 import '../LoginPage.css';
+import { LOGIN } from '../utils/mutations';
+import Auth from '../utils/auth';
 
 
 function LoginPage() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    // const [username, setUsername] = useState('');
+    // const [password, setPassword] = useState('');
+    const [formState, setFormState] = useState({ email: '', password: '' });
 
-    const handleSubmit = (e) => {
+    const [login, { error }] = useMutation(LOGIN);
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         // Handle login logic here
-        console.log(username, password); // For demonstration purposes
+        // console.log(username, password); // For demonstration purposes
+        try {
+            const mutationResponse = await login({
+              variables: { username: formState.username, password: formState.password },
+            });
+            const token = mutationResponse.data.login.token;
+            Auth.login(token);
+          } catch (e) {
+            console.log(e);
+          }
     };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormState({
+          ...formState,
+          [name]: value,
+        });
+      };
 
     return (
         <div className="login-container">
@@ -21,8 +44,10 @@ function LoginPage() {
                     <input
                         id="username"
                         type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        name="username"
+                        // value={username}
+                        // onChange={(e) => setUsername(e.target.value)}
+                        onChange={handleChange}
                     />
                 </div>
                 <div className="form-group">
@@ -30,8 +55,10 @@ function LoginPage() {
                     <input
                         id="password"
                         type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        name="password"
+                        // value={password}
+                        // onChange={(e) => setPassword(e.target.value)}
+                        onChange={handleChange}
                     />
                 </div>
                 <button type="submit" className="login-button">Login</button>

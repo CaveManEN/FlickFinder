@@ -8,7 +8,8 @@ const resolvers = {
     // Queries
     Query: {
         // A query to get all users.
-        users: async (parent, args, context) => {
+        users: async () => User.find(),
+        user: async (parent, args, context) => {
             if (context.user) {
                 const userData = await User.findOne({ _id: context.user._id }).select('-__v -password');
         
@@ -17,14 +18,13 @@ const resolvers = {
         
               throw AuthenticationError;
             },
-          },
-    
+    },
 
     // Mutations
     Mutation: {
         // mutation to add a user
         addUser: async (parent, args) => {
-            const addUser = await User.create(args);
+            const user = await User.create(args);
 
             //assign JWT token to user created
             const token = signToken(user);
