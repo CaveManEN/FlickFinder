@@ -1,0 +1,11 @@
+buildCommand: |
+  # Build the client-side React app
+  cd client
+  npm install
+  npm run build
+
+startCommand: |
+  # Start the server-side application
+  cd server
+  npm install
+  npm start
