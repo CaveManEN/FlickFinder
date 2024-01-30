@@ -154,6 +154,7 @@
   font-size: 15px;
   color: #DAA520;
   margin: auto 2px;
+  max-width: 100%; /* Limit text width to fit within the card */
 }
 
 
@@ -239,5 +240,15 @@
   animation: elasticPopUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+@media (max-width: 768px) {
+  .search-container {
+    width: 80%; /* Adjust the width for smaller screens */
+   
+  }
 
+  .search-container input[type="text"] {
+    width: 100%; /* Make the input width 100% for smaller screens */
+    margin-right: 0; /* Remove margin for smaller screens */
+  }
+}
 /* Remove any unused styles related to .App-logo, .App-header, etc., if they are not used */
