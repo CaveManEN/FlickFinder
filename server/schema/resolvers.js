@@ -34,9 +34,9 @@ const resolvers = {
         },
 
         // mutation for a user login
-        login: async (parent, { email, password}) => {
+        login: async (parent, { username, password}) => {
             // find user by their email
-            const user = await User.findOne({ email });
+            const user = await User.findOne({ username });
 
             // error if no user is found 
             if (!user) {

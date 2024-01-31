@@ -9,7 +9,7 @@ import { ADD_USER } from '../utils/mutations.js';
 
 
 const Register = () => {
-    const [formState, setFormState] = useState({ email: '', password: '' });
+    const [formState, setFormState] = useState({ email: '', password: '', username: '' });
     const [addUser] = useMutation(ADD_USER);
   
     const handleFormSubmit = async (event) => {
@@ -39,10 +39,10 @@ const Register = () => {
 
             <form onSubmit={handleFormSubmit} className="register-form">
                 {/* Registration form fields */}
-                <input onChange={handleChange} type="text" placeholder="Username" required />
-                <input onChange={handleChange} type="email" placeholder="Email" required />
-                <input onChange={handleChange} type="password" placeholder="Password" required />
-                <input onChange={handleChange} type="password" placeholder="Confirm Password" required />
+                <input onChange={handleChange} name="username" type="text" placeholder="Username" required />
+                <input onChange={handleChange} name="email" type="email" placeholder="Email" required />
+                <input onChange={handleChange} name="password" type="password" placeholder="Password" required />
+                <input onChange={handleChange} name="password" type="password" placeholder="Confirm Password" required />
 
                 <button type="submit">Register</button>
             </form>

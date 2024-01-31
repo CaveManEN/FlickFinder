@@ -202,7 +202,7 @@
   background-color: #5aa;
 }
 
-.error-page {
+#error-page {
   display: flex;
   align-items: center;
   background-color: #453838;
@@ -215,20 +215,20 @@
   position: relative;
 }
 
-.oops {
+#oops {
   font-family: 'Lobster', cursive; /* Add this line */
   color: #DAA520;
   font-size: 50px;
   text-shadow: 0 0 5px #DAA520;
 }
 
-.sorry {
+#sorry {
   font-size: 15px;
   color: #DAA520;
   margin: auto 2px;
 }
 
-.error {
+#error {
   display: flex;
   width: 20%;
   height: 200px;
