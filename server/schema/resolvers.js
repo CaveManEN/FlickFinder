@@ -54,6 +54,12 @@ const resolvers = {
             // if password is correct, return a user and their token to front end
             const token = signToken(user);
             return { user, token };
+        },
+        // TODO FINISH LOGOUT FUNCTIONALITY
+        logout: (parent, args, context) => {
+            if (!context.user) {
+                throw new AuthenticationError('User is not authenticated');
+            }
         }
     }
 }

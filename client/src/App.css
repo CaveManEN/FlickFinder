@@ -217,12 +217,8 @@
 }
 
 #sorry {
-<<<<<<< HEAD
-  font-size: 15px;
-=======
   font-family: 'Lobster', cursive;
   font-size: 40px;
->>>>>>> 8be4cbe476af0c6140867e695b009280f374e534
   color: #DAA520;
   margin: auto 2px;
   position: absolute; /* or position: fixed; */
@@ -233,15 +229,6 @@
 }
 
 #error {
-<<<<<<< HEAD
-  display: flex;
-  width: 20%;
-  height: 200px;
-  margin: 20px;
-  border-radius: 20px;
-  padding: 12px;
-  background-color: #DAA520;
-=======
   font-family: 'Lobster', cursive;
   font-size: 25px;
   color: #65350f;
@@ -250,7 +237,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
->>>>>>> 8be4cbe476af0c6140867e695b009280f374e534
 }
 
 @keyframes elasticPopUp {

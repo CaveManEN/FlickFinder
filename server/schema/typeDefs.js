@@ -19,7 +19,7 @@ type Query {
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(username: String!, password: String!): Auth
-  
+  logout: Boolean!
 }
 `;
 
